@@ -945,7 +945,7 @@ export class DropdownTreeComponent
 
     private _calculateHighlightedOnOpen(): TreeNode | null {
         if(this._selectedNode == null) {
-            return null;
+            return (this._getNodeCount() === 0) ? null : this._visibleNodes[0];
         } else if(this._visibleNodes.indexOf(this._selectedNode) === -1) {
             return this._visibleNodes[0];
         } else {
